@@ -20,13 +20,16 @@ spec:
             - /bin/bash 
             - '-c'
             - | 
-              sleep 300
-              n=$(oc get pods -n ibm-common-services --no-headers | grep -Ev 'Running')
-              while (n > 0)
+              sleep 10
+              echo "start"
+              n=$(oc get pods -n ibm-common-services --no-headers | grep -Ev 'Running|Completed'| wc -l)
+              echo "boucle"
+              echo $n
+              while ((n > 0))
               do
                 echo "Cloud Pak Foundational Services not yet installed"
                 sleep 30
-                n=$(oc get pods -n ibm-common-services --no-headers | grep -Ev 'Running')
+                n=$(oc get pods -n ibm-common-services --no-headers | grep -Ev 'Running|Completed' | wc -l)
               done
               echo "Cloud Pak Foundational Services installed"
           resources: {}
