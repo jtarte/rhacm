@@ -20,7 +20,7 @@ spec:
             - /bin/bash 
             - '-c'
             - | 
-              sleep 10
+              sleep 300
               echo "start"
               n=$(oc get pods -n ibm-common-services --no-headers | grep -Ev 'Running|Completed'| wc -l)
               echo "boucle"
