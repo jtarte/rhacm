@@ -11,6 +11,7 @@ spec:
   backoffLimit: 4
   template:
     metadata:
+      job-name: check-common-services
     spec:
       serviceAccountName: checker
       containers:
