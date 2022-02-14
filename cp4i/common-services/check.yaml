@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
     spec:
+      serviceAccountName: checker
       containers:
         - name: checker-oc
           image: 'quay.io/openshift/origin-cli:4.6.0'
