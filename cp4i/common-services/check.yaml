@@ -1,10 +1,10 @@
 kind: Job
 apiVersion: batch/v1
 metadata:
-  name: check-common-services
+  name: check-common-services-2
   namespace: ibm-common-services
   labels:
-    job-name: check-common-services
+    job-name: check-common-services-2
 spec:
   parallelism: 1
   completions: 1
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        job-name: check-common-services
+        job-name: check-common-services-2
     spec:
       serviceAccountName: checker
       containers:
