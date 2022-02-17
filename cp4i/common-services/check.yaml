@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         job-name: check-common-services-2
+        app.kubernetes.io/part-of: cp4i-base
     spec:
       serviceAccountName: checker
       containers:
